@@ -1,0 +1,51 @@
+@startuml
+left to right direction
+
+object "Lia: Usuario" as lia{
+    id = 1
+    nome = "Lia"
+    email = "lia123@email.com"
+    senha = "******"
+}
+
+object "Lyn: Artista" as lyn {
+    id = 2
+    nome = "Lyn"
+    email = "lyn@email.com"
+    senha = "******"
+    nomeArtistico = "LynFP"
+}
+
+object "favoritas: Playlist" as playlist {
+    id = 10
+    nome = "Favoritas"
+    qtdMusicas = 2
+}
+
+object "musica01: Musica" as musica1 {
+    id = 101
+    titulo = "Wake Up, Get Up, Get Out There"
+    duracao = 280
+    genero = "Jazz"
+}
+
+object "musica02: Musica" as musica2 {
+    id = 102
+    titulo = "Rivers In The Desert"
+    duracao = 316
+    genero = "Rock"
+}
+
+' RELACIONAMENTOS
+lia -- playlist : possui
+
+playlist -- musica1 : contém
+playlist -- musica2 : contém
+
+lyn -- musica1 : cadastra
+lyn -- musica2 : cadastra
+
+lia .. musica1 : busca
+lia .. musica2 : busca
+
+@enduml
