@@ -1,7 +1,4 @@
-@startuml
-
-title Saque Bancário
-
+@startuml diagrama_saque_bancario
 title Saque Bancário
 
 [*] --> AguardandoCartao
