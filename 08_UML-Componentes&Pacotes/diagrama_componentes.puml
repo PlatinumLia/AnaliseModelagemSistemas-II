@@ -1,0 +1,34 @@
+@startuml app_delivery
+
+title Diagrama de Componentes
+
+actor Usuario as user
+
+package Cliente as cliente{
+    component "App Mobile" as app
+    component "Desktop" as desktop
+}
+
+package Servidor{
+    component "API REST" as api
+    component "Pedido Service" as pedido
+    component "Auth Service" as auth
+    component "Notificação Service" as notificacao
+    database "Banco de Dados" as db
+}
+
+cloud {
+    component "Gateway Pagamento" as pagamento
+    component "Serviço de Mapas" as mapas
+}
+
+user --> cliente
+app --> api : REST/HTTPS
+api --> pedido : gerenciar pedidos
+api --> auth : autenticação
+pedido --> db : CRUD
+pedido --> notificacao : enviar notificação
+pedido --> pagamento : processar pagamento
+pedido --> mapas : consultar localização
+
+@enduml

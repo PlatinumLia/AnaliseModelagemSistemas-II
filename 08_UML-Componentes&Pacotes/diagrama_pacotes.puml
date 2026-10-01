@@ -1,0 +1,35 @@
+@startuml app_delivery
+
+allow_mixing
+
+title Diagrama de Pacotes
+
+package ui{
+    class "App / Web" as appweb
+}
+
+package domain{
+    class Pedido
+    class Usuario
+    class Item
+    class CardapioItem
+}
+
+package service{
+    class PedidoService
+    class PagamentoService
+    class NotificacaoService
+    class AuthService
+}
+
+class infra{
+    database DB
+    class GatewayPagamento
+    class ServicoMapas
+}
+
+ui --> service : utiliza
+service --> domain : manipula
+service --> infra : utliza
+
+@enduml
