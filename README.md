@@ -1,7 +1,7 @@
 # ANALISE E MODELAGEM DE SISTEMAS II
 * **CURSO:** TADS IFPR-Foz 
 * **PROFESSOR:** Marcos Roque da Rosa
-* **SEMESTRE:** 3º
+* **SEMESTRE:** 4º
 * **HORA AULA:** 80h
 * **HORA RELOGIO:** 67h
 
