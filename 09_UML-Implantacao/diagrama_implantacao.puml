@@ -1,0 +1,29 @@
+@startuml uml_implantacao
+
+title Diagrama de Implantação
+
+node "Smartphone" as smartphone{
+    artifact "App Mobile" as app
+}
+
+node "Servidor de Aplicação" as servidor{
+    artifact "API REST" as api
+    artifact "PedidoServer"
+    artifact "AuthServer"
+    artifact "NotificacaoServer"
+}
+
+database "Servidor de BD" as bd{
+    artifact "PostgresSQL DB" 
+}
+
+cloud "Serviços Externos" as externos {
+    artifact "GatewayPagamento"
+    artifact "ServidorMapas"
+}
+
+smartphone --> servidor : HTTPS
+servidor --> bd : TCP/IP
+servidor --> externos : HTTPS
+
+@enduml
